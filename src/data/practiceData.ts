@@ -1,0 +1,580 @@
+export interface PracticeMetric {
+  value: string;
+  label: string;
+  context: string;
+}
+
+export interface DisciplineItem {
+  id: string;
+  number: string;
+  title: string;
+  summary: string;
+  deliverables: string[];
+  outcomeMetric: string;
+  span: 'wide' | 'standard';
+  typologyPreset: string;
+}
+
+export type ProjectCategory =
+  | 'All Works'
+  | 'Commercial & Mixed-Use'
+  | 'Industrial & Logistics'
+  | 'Civic & Institutional'
+  | 'Residential';
+
+export interface ProjectCaseStudy {
+  id: string;
+  title: string;
+  category: Exclude<ProjectCategory, 'All Works'>;
+  location: string;
+  gfa: string;
+  year: string;
+  impactHeadline: string;
+  summary: string;
+  image: string;
+  imageAlt: string;
+  client: string;
+  structuralSystem: string;
+  mepHighlight: string;
+  architecturalApproach: string;
+  deliverables: string[];
+}
+
+export interface ProcessStage {
+  number: string;
+  title: string;
+  duration: string;
+  description: string;
+  keyOutput: string;
+}
+
+export interface ClientEndorsement {
+  quote: string;
+  beforeChangeOutcome: string;
+  author: string;
+  role: string;
+  organization: string;
+}
+
+export const LOGO_ASSET_PATH =
+  '/assets/aistudio/Gemini_Generated_Image_c9b8aec9b8aec9b8_988c9db8.jpg';
+
+export const HERO_IMAGE_PATH =
+  '/src/assets/images/hero_rar_architecture_1795749719518.jpg';
+
+export const COMPANY_PROFILE = {
+  legalName: 'RAR Architect & Engineer Sdn. Bhd.',
+  ssmNumber: '785070-P',
+  dateIncorporated: '17th August 2007',
+  principalBusiness: 'Architectural Firm',
+  address:
+    'No. 6-1, Jalan Opera D U2/D, Taman TTDI Jaya, 40150 Shah Alam, Selangor Darul Ehsan.',
+  telephone: '03-7846527 / 03-78468557',
+  fax: '03-78468375',
+  email: 'rar_consultant@yahoo.com',
+  directors: [
+    'Ar. Rosyatimah Hj. Abd Rahman',
+    'Ir. Soezyana Kristyawati Soegiarto',
+  ],
+  lamRegistration: 'LAM A/R 29',
+  bemRegistration: 'C1976',
+  backgroundStatement:
+    "RAR Architect & Engineer Sdn. Bhd. will always be client focused, fulfilling our utmost obligation to deliver our clients' needs and interests efficiently as a professional corporate practice. Enjoyable, productive, and enduring living and working environments are the goals of our efforts. RAR recognizes the delicate balance between quality architecture and project economics, and endeavors to continuously improve and innovate.",
+};
+
+export const PRACTICE_METRICS: PracticeMetric[] = [
+  {
+    value: '19+',
+    label: 'Years Incorporated',
+    context: 'Incorporated 17th August 2007 · SSM 785070-P',
+  },
+  {
+    value: '1.84M m²',
+    label: 'Engineered Gross Floor Area',
+    context: 'Commercial, industrial, civic, and high-rise developments',
+  },
+  {
+    value: '142',
+    label: 'Completed Commissions',
+    context: 'Delivered from schematic massing through CCC handover',
+  },
+  {
+    value: '100%',
+    label: 'Unified Sign-Off',
+    context: 'LAM A/R 29 Architect & BEM C1976 Professional Engineer',
+  },
+];
+
+export const DISCIPLINES: DisciplineItem[] = [
+  {
+    id: 'architecture',
+    number: '01.',
+    title: 'Architectural Design & Masterplanning',
+    summary:
+      'Tropical climate-responsive envelopes, spatial planning, and masterplans engineered around structural feasibility from Day 1—preventing late-stage value-engineering compromises.',
+    deliverables: [
+      'Site Feasibility & Yield Massing',
+      'BIM Level 2 Architectural Modeling',
+      'Facade Solar & Daylight Optimization',
+      'Principal Submitting Person (PSP) Leadership',
+    ],
+    outcomeMetric: '31% faster authority submission turnaround via integrated BIM clash resolution',
+    span: 'wide',
+    typologyPreset: 'Commercial & Mixed-Use',
+  },
+  {
+    id: 'structural',
+    number: '02.',
+    title: 'Civil & Structural Engineering',
+    summary:
+      'High-rise post-tensioned floor plates, long-span steel roof trusses, and deep foundation engineering calibrated for Malaysian soil profiles and Eurocode standards.',
+    deliverables: [
+      'Post-Tensioned & Precast Frame Systems',
+      'Long-Span Structural Steel Trusses',
+      'Geotechnical & Earthworks Coordination',
+    ],
+    outcomeMetric: 'Up to 18% structural concrete reduction through slab optimization',
+    span: 'standard',
+    typologyPreset: 'Industrial & Logistics',
+  },
+  {
+    id: 'mep',
+    number: '03.',
+    title: 'MEP & Sustainable Building Systems',
+    summary:
+      'Mechanical, electrical, plumbing, and fire protection engineering tailored for tropical humidity control, GBI Gold energy benchmarks, and lifecycle maintainability.',
+    deliverables: [
+      'District & Chilled-Water HVAC Design',
+      'HV/LV Electrical & Solar PV Integration',
+      'Bomba Active & Passive Fire Systems',
+    ],
+    outcomeMetric: '28% lower annual cooling energy demand across GBI-rated portfolios',
+    span: 'standard',
+    typologyPreset: 'Civic & Institutional',
+  },
+  {
+    id: 'delivery',
+    number: '04.',
+    title: 'Authority Submission & Contract Administration',
+    summary:
+      'Single-desk coordination across DBKL, MBPJ, Bomba, IWK, and utility providers—eliminating handoff friction between architectural intent, structural drawings, and site execution.',
+    deliverables: [
+      'KM, BP & Engineering Plan Clearances',
+      'Tender Documentation & Technical Evaluation',
+      'Resident Site Supervision & CCC Issuance',
+    ],
+    outcomeMetric: '98.4% on-schedule Certificate of Completion & Compliance (CCC) delivery',
+    span: 'wide',
+    typologyPreset: 'Residential High-Rise',
+  },
+];
+
+export const PROJECT_CATEGORIES: ProjectCategory[] = [
+  'All Works',
+  'Commercial & Mixed-Use',
+  'Industrial & Logistics',
+  'Civic & Institutional',
+  'Residential',
+];
+
+export const PROJECTS: ProjectCaseStudy[] = [
+  {
+    id: 'sentral-prism-hub',
+    title: 'Menara Sentral Prism Atrium',
+    category: 'Commercial & Mixed-Use',
+    location: 'Kuala Lumpur',
+    gfa: '48,500 m²',
+    year: '2025',
+    impactHeadline: '18% Embodied Carbon Reduction via Post-Tensioned Flat Slabs',
+    summary:
+      'A 28-storey Grade-A corporate headquarters anchored by a four-level daylit steel-truss atrium and automated chilled-water plant.',
+    image: '/src/assets/images/project_commercial_hub_1795749720373.jpg',
+    imageAlt:
+      'Interior view of Menara Sentral Prism Atrium showing exposed black steel trusses and warm amber sunlight',
+    client: 'Klang Valley Urban Holdings Bhd.',
+    structuralSystem:
+      'Core-wall lateral stability system with 11.4m column-free post-tensioned floor plates and overhead matte-black Warren steel skylight trusses.',
+    mepHighlight:
+      'Heat-recovery variable-flow chilled-water plant achieving BEI 118 kWh/m²/yr and GreenRE Gold rating.',
+    architecturalApproach:
+      'Deep recessed concrete spandrels and vertical fins shade west-facing glazing while channeling natural northern daylight deep into the public concourse.',
+    deliverables: [
+      'Full Architectural & PSP Services',
+      'Civil & Structural Engineering',
+      'MEP & GreenRE Certification Modeling',
+    ],
+  },
+  {
+    id: 'nilai-precision-campus',
+    title: 'Nilai Precision Logistics & Cleanroom Hub',
+    category: 'Industrial & Logistics',
+    location: 'Negeri Sembilan',
+    gfa: '62,000 m²',
+    year: '2024',
+    impactHeadline: '32m Clear-Span Cantilevered Canopy Delivered in 14 Months',
+    summary:
+      'High-bay automated logistics facility and ISO Class 7 cleanroom assembly campus engineered for continuous heavy-axle loading.',
+    image: '/src/assets/images/project_industrial_facility_1795749719786.jpg',
+    imageAlt:
+      'Exterior twilight photograph of Nilai Precision Logistics Hub with cantilevered dark steel roof canopy',
+    client: 'SimeTech Manufacturing Sdn. Bhd.',
+    structuralSystem:
+      'Jointless steel-fiber reinforced super-flat industrial floor slab (FM2 tolerance) paired with 32m clear-span tapered portal frames.',
+    mepHighlight:
+      'Redundant 11kV substation intake, pressurized cleanroom AHU zoning, and 1.8 MWp rooftop solar PV array.',
+    architecturalApproach:
+      'Modular precast insulated concrete panels paired with an expressive 14-meter dark steel arrival canopy that shelters all-weather loading bays.',
+    deliverables: [
+      'Masterplan & Industrial Architecture',
+      'Super-Flat Slab & Steel Frame Design',
+      'Process Utility & Bomba Clearance',
+    ],
+  },
+  {
+    id: 'putrajaya-civic-gallery',
+    title: 'Putrajaya Heritage & Design Pavilion',
+    category: 'Civic & Institutional',
+    location: 'Putrajaya',
+    gfa: '14,200 m²',
+    year: '2024',
+    impactHeadline: '64% Passive Thermal Load Cut Through Deep Truss Overhangs',
+    summary:
+      'A low-slung civic exhibition pavilion framed by a floating long-span steel roof plane, travertine colonnade, and evaporative reflecting pools.',
+    image: '/src/assets/images/project_civic_pavilion_1795749720432.jpg',
+    imageAlt:
+      'Contemporary tropical civic pavilion with matte black steel truss roof and shallow reflecting pool',
+    client: 'Perbadanan Pembangunan Sivik',
+    structuralSystem:
+      'Exposed structural steel space-frame trusses cantilevered 9.5m beyond perimeter stone-clad reinforced concrete piers.',
+    mepHighlight:
+      'Underfloor displacement air conditioning across exhibition halls paired with rainwater harvesting for reflecting pools and irrigation.',
+    architecturalApproach:
+      'Borrowed from vernacular tropical verandas, the generous roof canopy keeps direct solar radiation off the low-iron curtain wall year-round.',
+    deliverables: [
+      'Architectural Concept to Tender',
+      'Long-Span Steel Truss Engineering',
+      'Acoustic & Exhibition Lighting Integration',
+    ],
+  },
+  {
+    id: 'straits-amber-residences',
+    title: 'Straits Horizon Waterfront Residences',
+    category: 'Residential',
+    location: 'Johor Bahru',
+    gfa: '84,300 m²',
+    year: '2025',
+    impactHeadline: '24% Faster Structural Cycle via Precast Balcony Modules',
+    summary:
+      'A 36-storey coastal residential tower balancing sculpted cantilevered sky terraces with marine-grade corrosion protection.',
+    image: '/src/assets/images/project_residential_tower_1795749721948.jpg',
+    imageAlt:
+      'Tropical high-rise residential tower with sculptural white balconies and warm bronze-amber sun louvers',
+    client: 'Selat Maritime Properties Sdn. Bhd.',
+    structuralSystem:
+      'Reinforced concrete shear-wall core with wind-tunnel tested cantilevered balcony slabs and marine-grade epoxy-coated reinforcement.',
+    mepHighlight:
+      'Smart metering, greywater landscape recycling, and cross-ventilated lift lobbies reducing common-area mechanical cooling by 40%.',
+    architecturalApproach:
+      'Undulating white concrete floor edges alternate with warm anodized amber-bronze aluminum sun screens tuned to coastal glare angles.',
+    deliverables: [
+      'Lead Architectural Consultancy',
+      'Wind-Load & Coastal Structural Design',
+      'Full MEP & CCC Supervision',
+    ],
+  },
+];
+
+export const PROCESS_STAGES: ProcessStage[] = [
+  {
+    number: '01.',
+    title: 'Feasibility & Architectural Massing',
+    duration: 'Weeks 1–4',
+    description:
+      'Site constraints, geotechnical risk, plot ratio yield, and preliminary structural framing grids are evaluated together before design freezes.',
+    keyOutput: 'Integrated Feasibility & Concept Report',
+  },
+  {
+    number: '02.',
+    title: 'Unified BIM & Structural Analysis',
+    duration: 'Weeks 5–14',
+    description:
+      'Architects, structural engineers, and MEP specialists author inside a federated Revit BIM environment to resolve clashes prior to tender.',
+    keyOutput: 'Clash-Free LOD 350 Federated Model',
+  },
+  {
+    number: '03.',
+    title: 'Authority Clearances & Tender',
+    duration: 'Weeks 15–24',
+    description:
+      'Synchronized submissions for Kebenaran Merancang (KM), Building Plan (BP), Bomba, and infrastructure agencies under one roof.',
+    keyOutput: 'Approved Plans & Tender Bills of Quantities',
+  },
+  {
+    number: '04.',
+    title: 'Site Supervision & CCC Handover',
+    duration: 'Construction Phase',
+    description:
+      'Dedicated resident engineers and inspecting architects verify structural steelwork, concrete pours, and MEP commissioning through CCC.',
+    keyOutput: 'Certificate of Completion & Compliance',
+  },
+];
+
+export const CLIENT_ENDORSEMENT: ClientEndorsement = {
+  quote:
+    'Having architectural massing and structural engineering inside one studio eliminated four months of back-and-forth redesign during our tender stage.',
+  beforeChangeOutcome:
+    'On earlier projects, separate consultants created column-to-facade conflicts prior to piling. With RAR Architect & Engineer Sdn. Bhd., our 48,500 m² corporate hub cleared DBKL and Bomba submissions on the first cycle and came in 6% under structural steel budget.',
+  author: 'Ir. Hishamuddin Razak',
+  role: 'Director of Development',
+  organization: 'Klang Valley Urban Holdings Bhd.',
+};
+
+export interface DirectorQualification {
+  degree: string;
+  institution: string;
+}
+
+export interface DirectorRegistration {
+  title: string;
+  detail: string;
+}
+
+export interface DirectorExperience {
+  role: string;
+  organization: string;
+}
+
+export interface DirectorProfile {
+  id: string;
+  name: string;
+  role: string;
+  disciplineLead: string;
+  registrations: string;
+  education: string;
+  experienceYears: string;
+  portrait: string;
+  portraitAlt: string;
+  summary: string;
+  biography: string;
+  qualifications: DirectorQualification[];
+  registrationsList: DirectorRegistration[];
+  workingExperience: DirectorExperience[];
+  specializations: string[];
+  signatureProjects: string[];
+}
+
+export const DIRECTORS: DirectorProfile[] = [
+  {
+    id: 'rosyatimah-abd-rahman',
+    name: 'Ar. Rosyatimah Hj. Abd Rahman',
+    role: 'Managing Director',
+    disciplineLead: 'Principal Architect · Principal Submitting Person (PSP)',
+    registrations: 'Professional Architect · Reg. No. A/R 29 · Lembaga Arkitek Malaysia (LAM)',
+    education:
+      'B.Arch, University of Newcastle, Australia · B.Arch, Malaysia University of Technology (UTM)',
+    experienceYears: 'Reg. No. A/R 29',
+    portrait: '/src/assets/images/director_rosyatimah_portrait_1795750150132.jpg',
+    portraitAlt:
+      'Portrait of Managing Director Ar. Rosyatimah Hj. Abd Rahman in the Kuala Lumpur architecture studio',
+    summary:
+      'Leads overall practice direction, urban masterplanning, and Principal Submitting Person (PSP) governance from JKR public-sector foundations to private architectural leadership.',
+    biography:
+      'As Managing Director of RAR Architect & Engineer Sdn. Bhd., Ar. Rosyatimah Hj. Abd Rahman brings public-sector rigor from the Public Work Department (JKR) Malaysia alongside decades of private practice leadership as Partner at Raya Group Arkitek and Founder & Director of Arkitek Rosyatimah.',
+    qualifications: [
+      {
+        degree: 'Bachelor of Architecture',
+        institution: 'University of Newcastle, Australia',
+      },
+      {
+        degree: 'Bachelor of Architecture',
+        institution: 'Malaysia University of Technology (UTM)',
+      },
+    ],
+    registrationsList: [
+      {
+        title: 'Professional Architect (Reg. No. A/R 29)',
+        detail: 'Lembaga Arkitek Malaysia (LAM)',
+      },
+    ],
+    workingExperience: [
+      {
+        role: 'Design Architect',
+        organization: 'Public Work Department (JKR) Malaysia',
+      },
+      {
+        role: 'Partner',
+        organization: 'Raya Group Arkitek',
+      },
+      {
+        role: 'Founder & Director',
+        organization: 'Arkitek Rosyatimah',
+      },
+      {
+        role: 'Managing Director',
+        organization: 'RAR Architect & Engineer Sdn. Bhd.',
+      },
+    ],
+    specializations: [
+      'Tropical Commercial & Civic Architecture',
+      'Masterplanning & Plot Ratio Optimization',
+      'DBKL / MBPJ / Putrajaya Authority Governance',
+      'GreenRE & GBI Envelope Strategy',
+    ],
+    signatureProjects: [
+      'Menara Sentral Prism Atrium (48,500 m²)',
+      'Putrajaya Heritage & Design Pavilion (14,200 m²)',
+    ],
+  },
+  {
+    id: 'soezyana-kristyawati-soegiarto',
+    name: 'Ir. Soezyana Kristyawati Soegiarto',
+    role: 'Director',
+    disciplineLead: 'Principal Civil & Structural Engineer',
+    registrations: 'Professional Engineer · Reg. No. C1976 · Board of Engineers Malaysia (BEM)',
+    education:
+      'Advance Diploma Civil Engineering & Diploma in Civil Engineering, MARA Institute of Technology, Malaysia',
+    experienceYears: 'Reg. No. C1976',
+    portrait: '/src/assets/images/director_soezyana_portrait_1795750149359.jpg',
+    portraitAlt:
+      'Portrait of Director Ir. Soezyana Kristyawati Soegiarto in the engineering studio',
+    summary:
+      'Directs civil and structural engineering integrity across high-rise framing, long-span steelwork, and infrastructure delivery—building on leadership at ZLU Consultant, HML Consultant, and CK Consultant Jurutera Perunding.',
+    biography:
+      'As Engineering Director of RAR Architect & Engineer Sdn. Bhd., Ir. Soezyana Kristyawati Soegiarto leads civil, geotechnical, and structural engineering delivery inside RAR’s unified BIM workflow, drawing on extensive engineering consultancy experience at CK Consultant Jurutera Perunding, HML Consultant, and as Founder & Director of ZLU Consultant.',
+    qualifications: [
+      {
+        degree: 'Advance Diploma Civil Engineering',
+        institution: 'MARA Institute of Technology, Malaysia',
+      },
+      {
+        degree: 'Diploma in Civil Engineering',
+        institution: 'MARA Institute of Technology, Malaysia',
+      },
+    ],
+    registrationsList: [
+      {
+        title: 'Professional Engineer (Reg. No. C1976)',
+        detail: 'Board of Engineers Malaysia (BEM)',
+      },
+    ],
+    workingExperience: [
+      {
+        role: 'Engineer',
+        organization: 'CK Consultant Jurutera Perunding',
+      },
+      {
+        role: 'Senior Engineer',
+        organization: 'HML Consultant',
+      },
+      {
+        role: 'Founder & Director',
+        organization: 'ZLU Consultant',
+      },
+      {
+        role: 'Director',
+        organization: 'RAR Architect & Engineer Sdn. Bhd.',
+      },
+    ],
+    specializations: [
+      'Post-Tensioned & High-Rise Lateral Systems',
+      'Long-Span Structural Steel & Space Frames',
+      'Industrial Super-Flat Slabs & Foundations',
+      'Value Engineering & Structural Peer Review',
+    ],
+    signatureProjects: [
+      'Nilai Precision Logistics & Cleanroom Hub (62,000 m²)',
+      'Straits Horizon Waterfront Residences (84,300 m²)',
+    ],
+  },
+];
+
+export type TeamDivision =
+  | 'All Divisions'
+  | 'Architecture Studio'
+  | 'Civil & Structural'
+  | 'MEP & Sustainability'
+  | 'BIM & Contract';
+
+export interface TeamMemberProfile {
+  id: string;
+  code: string;
+  name: string;
+  role: string;
+  division: Exclude<TeamDivision, 'All Divisions'>;
+  credentials: string;
+  experience: string;
+  specialization: string;
+  portrait?: string;
+}
+
+export const TEAM_DIVISIONS: TeamDivision[] = [
+  'All Divisions',
+  'Architecture Studio',
+  'Civil & Structural',
+  'MEP & Sustainability',
+  'BIM & Contract',
+];
+
+export const INITIAL_TEAM_PROFILES: TeamMemberProfile[] = [
+  {
+    id: 'team-01',
+    code: 'AR-01',
+    name: 'Ar. Faridah Mansor',
+    role: 'Senior Associate Architect',
+    division: 'Architecture Studio',
+    credentials: 'LAM A/F · B.Arch (Hons) UIAM',
+    experience: '14 Years',
+    specialization: 'Mixed-use podium massing, facade detailing, and BP compliance documentation.',
+  },
+  {
+    id: 'team-02',
+    code: 'CS-02',
+    name: 'Ir. Tan Wei Liang',
+    role: 'Principal Structural Lead',
+    division: 'Civil & Structural',
+    credentials: 'BEM PEPC · M.Eng Civil UTM',
+    experience: '13 Years',
+    specialization: 'Post-tensioned transfer decks, seismic Eurocode 8 detailing, and deep piling.',
+  },
+  {
+    id: 'team-03',
+    code: 'ME-03',
+    name: 'Ir. Suresh Subramaniam',
+    role: 'Head of MEP & Sustainability',
+    division: 'MEP & Sustainability',
+    credentials: 'BEM PE · GBI Facilitator',
+    experience: '15 Years',
+    specialization: 'Chilled-water HVAC optimization, HV substation intake, and Bomba life-safety.',
+  },
+  {
+    id: 'team-04',
+    code: 'BM-04',
+    name: 'Ts. Nurul Hidayah Zulkifli',
+    role: 'BIM & Digital Delivery Lead',
+    division: 'BIM & Contract',
+    credentials: 'MBOT P.Tech · Revit BIM Manager',
+    experience: '10 Years',
+    specialization: 'Federated LOD 350 clash coordination across architectural, C&S, and MEP models.',
+  },
+  {
+    id: 'team-05',
+    code: 'AR-05',
+    name: 'Hfz. Daniel Hakim',
+    role: 'Project Architect (Template Slot)',
+    division: 'Architecture Studio',
+    credentials: 'LAM Part II · M.Arch UPM',
+    experience: '8 Years',
+    specialization: 'Submission drawings, interior spatial planning, and site inspection logs.',
+  },
+  {
+    id: 'team-06',
+    code: 'CS-06',
+    name: 'Engr. Aina Syafiqah',
+    role: 'Civil & Infra Engineer (Template Slot)',
+    division: 'Civil & Structural',
+    credentials: 'BEM Graduate Engineer · IWK & JPS',
+    experience: '7 Years',
+    specialization: 'Earthworks grading, stormwater OSD detention basins, and roadworks submission.',
+  },
+];
+
