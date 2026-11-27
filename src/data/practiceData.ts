@@ -215,18 +215,18 @@ export const PROJECT_CATEGORIES: ProjectCategory[] = [
 
 export const PROJECTS: ProjectCaseStudy[] = [
   {
-    id: 'sentral-prism-hub',
-    title: 'Menara Sentral Prism Atrium',
+    id: 'stidgard-university',
+    title: 'STIDGARD UNIVERSITY',
     category: 'Commercial & Mixed-Use',
     location: 'Kuala Lumpur',
     gfa: '48,500 m²',
     year: '2025',
-    impactHeadline: '18% Embodied Carbon Reduction via Post-Tensioned Flat Slabs',
+    impactHeadline: 'High-Rise Proposal Project',
     summary:
-      'A 28-storey Grade-A corporate headquarters anchored by a four-level daylit steel-truss atrium and automated chilled-water plant.',
-    image: '/src/assets/images/project_commercial_hub_1795749720373.jpg',
+      'A high-rise proposal project for STIDGARD UNIVERSITY.',
+    image: '/src/assets/images/project_stidgard_university.png',
     imageAlt:
-      'Interior view of Menara Sentral Prism Atrium showing exposed black steel trusses and warm amber sunlight',
+      'STIDGARD UNIVERSITY high-rise proposal project',
     client: 'Klang Valley Urban Holdings Bhd.',
     structuralSystem:
       'Core-wall lateral stability system with 11.4m column-free post-tensioned floor plates and overhead matte-black Warren steel skylight trusses.',
