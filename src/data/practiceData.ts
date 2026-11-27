@@ -282,7 +282,7 @@ export const PROJECTS: ProjectCaseStudy[] = [
     impactHeadline: 'Connecting People, Cities, and Opportunities Through Design.',
     summary:
       'Mumbai International Airport is a visionary airport proposal designed to create a world-class aviation hub that combines operational efficiency, passenger comfort, and architectural excellence. The project aims to deliver a sustainable and future-ready transportation gateway that strengthens regional connectivity while celebrating Mumbai\'s position as a leading global city.',
-    image: '/src/assets/images/project_civic_pavilion_1795749720432.jpg',
+    image: '/src/assets/images/project_mumbai_international_airport.png',
     imageAlt:
       'Mumbai International Airport proposal',
     client: 'Mumbai International Airport Authority',
