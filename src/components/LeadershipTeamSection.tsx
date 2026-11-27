@@ -32,6 +32,12 @@ export function LeadershipTeamSection({
     useState<TeamDivision>('All Divisions');
   const [teamMembers, setTeamMembers] =
     useState<TeamMemberProfile[]>(INITIAL_TEAM_PROFILES);
+
+  const filteredMembers =
+    activeDivision === 'All Divisions'
+      ? teamMembers
+      : teamMembers.filter((member) => member.division === activeDivision);
+
   const getInitials = (fullName: string) => {
     const cleaned = fullName
       .replace(/^(Ar\.|Ir\.|Ts\.|Engr\.|Hfz\.|Dr\.)\s*/i, '')
