@@ -1,7 +1,12 @@
+import { useState } from 'react';
 import { COMPANY_PROFILE, LOGO_ASSET_PATH } from '../data/practiceData';
+import { TermsConditionsModal } from './TermsConditionsModal';
 
 export function Footer() {
+  const [termsOpen, setTermsOpen] = useState(false);
+
   return (
+    <>
     <footer className="bg-white text-[#4A4A48] py-12 border-t border-[#E5E5E3]">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-8 border-b border-[#E5E5E3]">
@@ -43,6 +48,13 @@ export function Footer() {
             <a href="#consultation" className="hover:text-[#0F0F0F] transition-colors">
               Consultation
             </a>
+            <button
+              type="button"
+              onClick={() => setTermsOpen(true)}
+              className="hover:text-[#0F0F0F] transition-colors cursor-pointer"
+            >
+              Terms &amp; Conditions
+            </button>
           </nav>
         </div>
 
@@ -57,5 +69,7 @@ export function Footer() {
         </div>
       </div>
     </footer>
+    <TermsConditionsModal open={termsOpen} onClose={() => setTermsOpen(false)} />
+    </>
   );
 }
