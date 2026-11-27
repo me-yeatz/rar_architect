@@ -20,6 +20,7 @@ export type ProjectCategory =
   | 'Commercial & Mixed-Use'
   | 'Industrial & Logistics'
   | 'Civic & Institutional'
+  | 'Religious & Civic Architecture'
   | 'Residential';
 
 export interface ProjectCaseStudy {
@@ -210,6 +211,7 @@ export const PROJECT_CATEGORIES: ProjectCategory[] = [
   'Commercial & Mixed-Use',
   'Industrial & Logistics',
   'Civic & Institutional',
+  'Religious & Civic Architecture',
   'Residential',
 ];
 
@@ -241,18 +243,18 @@ export const PROJECTS: ProjectCaseStudy[] = [
     ],
   },
   {
-    id: 'nilai-precision-campus',
-    title: 'Nilai Precision Logistics & Cleanroom Hub',
-    category: 'Industrial & Logistics',
-    location: 'Negeri Sembilan',
+    id: 'purposed-mosque-teluk-gadong',
+    title: 'Purposed Mosque at Teluk Gadong, Klang Selangor',
+    category: 'Religious & Civic Architecture',
+    location: 'Teluk Gadong, Klang, Selangor',
     gfa: '62,000 m²',
     year: '2024',
-    impactHeadline: '32m Clear-Span Cantilevered Canopy Delivered in 14 Months',
+    impactHeadline: 'Religious & Civic Architecture',
     summary:
-      'High-bay automated logistics facility and ISO Class 7 cleanroom assembly campus engineered for continuous heavy-axle loading.',
-    image: '/src/assets/images/project_industrial_facility_1795749719786.jpg',
+      'Purposed mosque at Teluk Gadong, Klang, Selangor.',
+    image: '/src/assets/images/project_purposed_mosque_teluk_gadong.png',
     imageAlt:
-      'Exterior twilight photograph of Nilai Precision Logistics Hub with cantilevered dark steel roof canopy',
+      'Purposed Mosque at Teluk Gadong, Klang Selangor',
     client: 'SimeTech Manufacturing Sdn. Bhd.',
     structuralSystem:
       'Jointless steel-fiber reinforced super-flat industrial floor slab (FM2 tolerance) paired with 32m clear-span tapered portal frames.',
