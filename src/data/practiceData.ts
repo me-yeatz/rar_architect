@@ -21,6 +21,7 @@ export type ProjectCategory =
   | 'Industrial & Logistics'
   | 'Civic & Institutional'
   | 'Religious & Civic Architecture'
+  | 'Transportation / Aviation Infrastructure'
   | 'Residential';
 
 export interface ProjectCaseStudy {
@@ -212,6 +213,7 @@ export const PROJECT_CATEGORIES: ProjectCategory[] = [
   'Industrial & Logistics',
   'Civic & Institutional',
   'Religious & Civic Architecture',
+  'Transportation / Aviation Infrastructure',
   'Residential',
 ];
 
@@ -271,29 +273,30 @@ export const PROJECTS: ProjectCaseStudy[] = [
     ],
   },
   {
-    id: 'putrajaya-civic-gallery',
-    title: 'Putrajaya Heritage & Design Pavilion',
-    category: 'Civic & Institutional',
-    location: 'Putrajaya',
+    id: 'mumbai-international-airport',
+    title: 'MUMBAI International Airport',
+    category: 'Transportation / Aviation Infrastructure',
+    location: 'Mumbai, India',
     gfa: '14,200 m²',
     year: '2024',
-    impactHeadline: '64% Passive Thermal Load Cut Through Deep Truss Overhangs',
+    impactHeadline: 'Connecting People, Cities, and Opportunities Through Design.',
     summary:
-      'A low-slung civic exhibition pavilion framed by a floating long-span steel roof plane, travertine colonnade, and evaporative reflecting pools.',
+      'Mumbai International Airport is a visionary airport proposal designed to create a world-class aviation hub that combines operational efficiency, passenger comfort, and architectural excellence. The project aims to deliver a sustainable and future-ready transportation gateway that strengthens regional connectivity while celebrating Mumbai\'s position as a leading global city.',
     image: '/src/assets/images/project_civic_pavilion_1795749720432.jpg',
     imageAlt:
-      'Contemporary tropical civic pavilion with matte black steel truss roof and shallow reflecting pool',
-    client: 'Perbadanan Pembangunan Sivik',
+      'Mumbai International Airport proposal',
+    client: 'Mumbai International Airport Authority',
     structuralSystem:
-      'Exposed structural steel space-frame trusses cantilevered 9.5m beyond perimeter stone-clad reinforced concrete piers.',
+      'Large-span terminal roof structures and efficient aviation infrastructure framing designed for high passenger throughput.',
     mepHighlight:
-      'Underfloor displacement air conditioning across exhibition halls paired with rainwater harvesting for reflecting pools and irrigation.',
+      'Sustainable airport systems, energy-efficient HVAC, and smart building technologies for a future-ready aviation hub.',
     architecturalApproach:
-      'Borrowed from vernacular tropical verandas, the generous roof canopy keeps direct solar radiation off the low-iron curtain wall year-round.',
+      'Mumbai International Airport is a visionary airport proposal designed to create a world-class aviation hub that combines operational efficiency, passenger comfort, and architectural excellence. The project aims to deliver a sustainable and future-ready transportation gateway that strengthens regional connectivity while celebrating Mumbai\'s position as a leading global city. Status: Proposal Project.',
     deliverables: [
-      'Architectural Concept to Tender',
-      'Long-Span Steel Truss Engineering',
-      'Acoustic & Exhibition Lighting Integration',
+      'Airport Terminal Architecture & Masterplan',
+      'Aviation Infrastructure Planning',
+      'Passenger Experience & Circulation Design',
+      'Sustainable & Future-Ready Systems',
     ],
   },
   {
