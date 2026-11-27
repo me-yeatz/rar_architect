@@ -107,7 +107,7 @@ export function ConsultationSection({ selectedTypology }: ConsultationSectionPro
         <div className="pb-10 border-b border-[#E5E5E3] flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div>
             <p className="text-sm font-semibold text-[#A65604]">
-              05. Project Consultation
+              06. Project Consultation
             </p>
             <h2
               className="mt-2 font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#0F0F0F]"

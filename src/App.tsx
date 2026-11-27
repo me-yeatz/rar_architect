@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { CompanyBackgroundSection } from './components/CompanyBackgroundSection';
+import { CertificationsSection } from './components/CertificationsSection';
 import { DisciplinesSection } from './components/DisciplinesSection';
 import { ProjectsSection } from './components/ProjectsSection';
 import { LeadershipTeamSection } from './components/LeadershipTeamSection';
@@ -46,6 +47,7 @@ export default function App() {
         />
         <CompanyBackgroundSection />
         <DisciplinesSection onSelectDiscipline={handleSelectTypologyAndConsult} />
+        <CertificationsSection />
         <ProjectsSection onInspectProject={setActiveProject} />
         <LeadershipTeamSection onConsultDirector={handleSelectTypologyAndConsult} />
         <PracticeMethodSection />

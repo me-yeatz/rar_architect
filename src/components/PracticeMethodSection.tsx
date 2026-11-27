@@ -10,7 +10,7 @@ export function PracticeMethodSection() {
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-10 border-b border-white/15">
           <div>
-            <p className="text-sm font-semibold text-[#F5A33E]">04. The RAR Method</p>
+            <p className="text-sm font-semibold text-[#F5A33E]">05. The RAR Method</p>
             <h2
               className="mt-2 font-display text-3xl sm:text-4xl font-bold tracking-tight text-white"
               style={{ textWrap: 'balance' }}

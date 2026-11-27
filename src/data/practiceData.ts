@@ -62,6 +62,42 @@ export const LOGO_ASSET_PATH =
 export const HERO_IMAGE_PATH =
   '/src/assets/images/hero_rar_architecture_1795749719518.jpg';
 
+export interface CompanyCertification {
+  id: string;
+  title: string;
+  issuer: string;
+  registrationNumber: string;
+  description: string;
+  icon?: string;
+}
+
+export const COMPANY_CERTIFICATIONS: CompanyCertification[] = [
+  {
+    id: 'lam-architect',
+    title: 'Professional Architect (PSP)',
+    issuer: 'Lembaga Arkitek Malaysia (LAM)',
+    registrationNumber: 'Reg. No. A/R 29',
+    description:
+      'Registered Principal Submitting Person practice, governing architectural design, submissions, and professional governance.',
+  },
+  {
+    id: 'bem-engineer',
+    title: 'Professional Engineer',
+    issuer: 'Board of Engineers Malaysia (BEM)',
+    registrationNumber: 'Reg. No. C1976',
+    description:
+      'Registered civil and structural engineering practice, covering design, analysis, and site supervision.',
+  },
+  {
+    id: 'ssm-registration',
+    title: 'Company Registration',
+    issuer: 'Suruhanjaya Syarikat Malaysia (SSM)',
+    registrationNumber: '785070-P',
+    description:
+      'Incorporated 17th August 2007 as an architectural and engineering consultancy firm.',
+  },
+];
+
 export const COMPANY_PROFILE = {
   legalName: 'RAR Architect & Engineer Sdn. Bhd.',
   ssmNumber: '785070-P',

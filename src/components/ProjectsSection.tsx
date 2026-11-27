@@ -28,7 +28,7 @@ export function ProjectsSection({ onInspectProject }: ProjectsSectionProps) {
         {/* Header + Interactive Filter Controls */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-8 border-b border-[#E5E5E3]">
           <div>
-            <p className="text-sm font-semibold text-[#A65604]">02. Selected Works</p>
+            <p className="text-sm font-semibold text-[#A65604]">03. Selected Works</p>
             <h2
               className="mt-2 font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#0F0F0F]"
               style={{ textWrap: 'balance' }}

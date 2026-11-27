@@ -51,7 +51,7 @@ export function LeadershipTeamSection({
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-10 border-b border-[#E5E5E3]">
           <div>
             <p className="text-sm font-semibold text-[#A65604]">
-              03. Leadership &amp; Studio Team
+              04. Leadership &amp; Studio Team
             </p>
             <h2
               className="mt-2 font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#0F0F0F]"
