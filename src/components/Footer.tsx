@@ -31,7 +31,7 @@ export function Footer() {
             className="flex flex-wrap items-center gap-6 text-sm font-medium text-[#4A4A48]"
           >
             <a href="#disciplines" className="hover:text-[#0F0F0F] transition-colors">
-              Disciplines
+              The Firm
             </a>
             <a href="#projects" className="hover:text-[#0F0F0F] transition-colors">
               Projects

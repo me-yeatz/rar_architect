@@ -26,7 +26,9 @@ interface FormErrors {
 const TYPOLOGY_OPTIONS = [
   'Commercial & Mixed-Use',
   'Industrial & Logistics',
+  'Industrial & Infrastructure',
   'Civic & Institutional',
+  'Institutional Building Project',
   'Residential High-Rise',
   'Structural & MEP Retrofit',
 ];

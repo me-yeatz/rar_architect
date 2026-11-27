@@ -7,9 +7,9 @@ interface NavbarProps {
 }
 
 const NAV_LINKS = [
-  { label: 'Disciplines', href: '#disciplines' },
+  { label: 'The Firm', href: '#disciplines' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Process', href: '#method' },
+  { label: 'About Us / Background', href: '#practice-heritage' },
   { label: 'Leadership', href: '#leadership' },
 ];
 

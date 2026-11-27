@@ -33,7 +33,7 @@ export function ProjectsSection({ onInspectProject }: ProjectsSectionProps) {
               className="mt-2 font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#0F0F0F]"
               style={{ textWrap: 'balance' }}
             >
-              Built proof across commercial, industrial, and civic typologies.
+              An exploration of architecture through innovation, functionality, and contextual design.
             </h2>
           </div>
 

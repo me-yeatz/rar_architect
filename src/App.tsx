@@ -46,7 +46,7 @@ export default function App() {
           onProjectsClick={() => scrollToSection('projects')}
         />
         <CompanyBackgroundSection />
-        <DisciplinesSection onSelectDiscipline={handleSelectTypologyAndConsult} />
+        <DisciplinesSection />
         <CertificationsSection />
         <ProjectsSection onInspectProject={setActiveProject} />
         <LeadershipTeamSection onConsultDirector={handleSelectTypologyAndConsult} />

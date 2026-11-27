@@ -19,7 +19,9 @@ export type ProjectCategory =
   | 'All Works'
   | 'Commercial & Mixed-Use'
   | 'Industrial & Logistics'
+  | 'Industrial & Infrastructure'
   | 'Civic & Institutional'
+  | 'Institutional Building Project'
   | 'Religious & Civic Architecture'
   | 'Transportation / Aviation Infrastructure'
   | 'Residential';
@@ -40,6 +42,7 @@ export interface ProjectCaseStudy {
   mepHighlight: string;
   architecturalApproach: string;
   deliverables: string[];
+  gallery?: string[];
 }
 
 export interface ProcessStage {
@@ -211,7 +214,9 @@ export const PROJECT_CATEGORIES: ProjectCategory[] = [
   'All Works',
   'Commercial & Mixed-Use',
   'Industrial & Logistics',
+  'Industrial & Infrastructure',
   'Civic & Institutional',
+  'Institutional Building Project',
   'Religious & Civic Architecture',
   'Transportation / Aviation Infrastructure',
   'Residential',
@@ -225,19 +230,19 @@ export const PROJECTS: ProjectCaseStudy[] = [
     location: 'Kuala Lumpur',
     gfa: '48,500 m²',
     year: '2025',
-    impactHeadline: 'High-Rise Proposal Project',
+    impactHeadline: 'High-Rise Academic Campus Proposal',
     summary:
-      'A high-rise proposal project for STIDGARD UNIVERSITY.',
+      'The Stidgard University High-Rise Campus is envisioned as a next-generation educational landmark that redefines the future of higher learning within an urban environment. Designed to maximize land efficiency while creating a dynamic academic ecosystem, the development integrates teaching, research, innovation, and student life within a vertical campus setting.',
     image: '/src/assets/images/project_stidgard_university.png',
     imageAlt:
-      'STIDGARD UNIVERSITY high-rise proposal project',
+      'STIDGARD UNIVERSITY High-Rise Academic Campus Proposal',
     client: 'Klang Valley Urban Holdings Bhd.',
     structuralSystem:
       'Core-wall lateral stability system with 11.4m column-free post-tensioned floor plates and overhead matte-black Warren steel skylight trusses.',
     mepHighlight:
       'Heat-recovery variable-flow chilled-water plant achieving BEI 118 kWh/m²/yr and GreenRE Gold rating.',
     architecturalApproach:
-      'Deep recessed concrete spandrels and vertical fins shade west-facing glazing while channeling natural northern daylight deep into the public concourse.',
+      'The Stidgard University High-Rise Campus is envisioned as a next-generation educational landmark that redefines the future of higher learning within an urban environment. Designed to maximize land efficiency while creating a dynamic academic ecosystem, the development integrates teaching, research, innovation, and student life within a vertical campus setting. The proposal features state-of-the-art lecture halls, research laboratories, collaborative learning spaces, academic offices, student amenities, and communal facilities seamlessly connected through a modern architectural framework. Sustainable design principles, smart building technologies, and flexible learning environments form the foundation of the project, supporting the evolving needs of future generations. As a prominent educational destination, the tower serves as a symbol of knowledge, innovation, and excellence. The design aims to foster creativity, interdisciplinary collaboration, and academic achievement while establishing a distinctive presence within the city\'s skyline. Status: Proposal Project.',
     deliverables: [
       'Full Architectural & PSP Services',
       'Civil & Structural Engineering',
@@ -300,29 +305,61 @@ export const PROJECTS: ProjectCaseStudy[] = [
     ],
   },
   {
-    id: 'straits-amber-residences',
-    title: 'Straits Horizon Waterfront Residences',
-    category: 'Residential',
-    location: 'Johor Bahru',
-    gfa: '84,300 m²',
-    year: '2025',
-    impactHeadline: '24% Faster Structural Cycle via Precast Balcony Modules',
+    id: 'jimah-power-plant',
+    title: 'Jimah Power Plant',
+    category: 'Industrial & Infrastructure',
+    location: 'Port Dickson, Negeri Sembilan, Malaysia',
+    gfa: '—',
+    year: 'Design Proposal',
+    impactHeadline: 'Design Proposal',
     summary:
-      'A 36-storey coastal residential tower balancing sculpted cantilevered sky terraces with marine-grade corrosion protection.',
-    image: '/src/assets/images/project_residential_tower_1795749721948.jpg',
+      'The Jimah Power Plant project forms part of a critical energy infrastructure network that supports reliable power generation and distribution within Peninsular Malaysia. Designed to accommodate complex operational requirements, the development integrates industrial functionality, engineering efficiency, and long-term sustainability to meet the demands of a modern power generation facility.',
+    image: '/src/assets/images/project_jimah_power_plant.png',
     imageAlt:
-      'Tropical high-rise residential tower with sculptural white balconies and warm bronze-amber sun louvers',
-    client: 'Selat Maritime Properties Sdn. Bhd.',
+      'Jimah Power Plant industrial infrastructure project in Port Dickson, Negeri Sembilan, Malaysia',
+    client: 'Jimah Power Plant',
     structuralSystem:
-      'Reinforced concrete shear-wall core with wind-tunnel tested cantilevered balcony slabs and marine-grade epoxy-coated reinforcement.',
+      'Industrial power generation infrastructure with operational support facilities and durable structural systems designed for continuous energy production.',
     mepHighlight:
-      'Smart metering, greywater landscape recycling, and cross-ventilated lift lobbies reducing common-area mechanical cooling by 40%.',
+      'Efficient building systems, operational control areas, and industrial services supporting reliable power generation and maintenance access.',
+    gallery: [
+      '/src/assets/images/project_jimah_power_plant_02.png',
+      '/src/assets/images/project_jimah_power_plant_03.png',
+    ],
     architecturalApproach:
-      'Undulating white concrete floor edges alternate with warm anodized amber-bronze aluminum sun screens tuned to coastal glare angles.',
+      'The Jimah Power Plant project forms part of a critical energy infrastructure network that supports reliable power generation and distribution within Peninsular Malaysia. Designed to accommodate complex operational requirements, the development integrates industrial functionality, engineering efficiency, and long-term sustainability to meet the demands of a modern power generation facility. The project encompasses a range of operational components including administrative facilities, technical support spaces, operational control areas, and essential infrastructure designed to support continuous energy production. Particular emphasis was placed on creating a functional built environment that ensures operational reliability, workforce safety, and efficient maintenance access while complying with stringent industrial standards and regulatory requirements. Architecturally, the development balances industrial performance with a contemporary design approach, incorporating durable materials, efficient building systems, and practical spatial planning. The facility\'s layout is carefully organized to optimize workflow, logistical movement, and interaction between operational zones, ensuring seamless coordination across different functions within the power generation complex. Beyond its operational role, the project contributes to Malaysia\'s national energy resilience by supporting stable electricity supply for residential, commercial, and industrial sectors. Through the integration of engineering excellence, infrastructure planning, and sustainable design considerations, the Jimah Power Plant stands as a significant industrial development that reinforces the country\'s commitment to economic growth and long-term energy security. Status: Design Proposal.',
     deliverables: [
-      'Lead Architectural Consultancy',
-      'Wind-Load & Coastal Structural Design',
-      'Full MEP & CCC Supervision',
+      'Industrial Architecture & Masterplan',
+      'Operational & Technical Support Facilities',
+      'Industrial Engineering Coordination',
+      'Authority Submission & CCC Supervision',
+    ],
+  },
+  {
+    id: 'murni-nursing-college',
+    title: 'MURNI NURSING COLLEGE',
+    category: 'Institutional Building Project',
+    location: 'Cyberjaya, Selangor, Malaysia',
+    gfa: '—',
+    year: 'Design Proposal',
+    impactHeadline: 'Design Proposal',
+    summary:
+      'The Murni Nursing College is envisioned as a modern educational institution dedicated to cultivating the next generation of healthcare professionals. The design proposal aims to create a holistic learning environment that supports academic excellence, practical training, and personal development within a contemporary campus setting.',
+    image: '/src/assets/images/project_murni_nursing_college.png',
+    imageAlt:
+      'MURNI NURSING COLLEGE institutional building project in Cyberjaya, Selangor, Malaysia',
+    client: 'Murni Nursing College',
+    structuralSystem:
+      'Institutional campus structure designed for lecture, training, and administrative facilities within a contemporary educational framework.',
+    mepHighlight:
+      'Efficient building systems, natural daylighting, and sustainable campus services supporting healthcare education and training.',
+    architecturalApproach:
+      'The Murni Nursing College is envisioned as a modern educational institution dedicated to cultivating the next generation of healthcare professionals. The design proposal aims to create a holistic learning environment that supports academic excellence, practical training, and personal development within a contemporary campus setting. The development integrates lecture halls, simulation laboratories, clinical skills training facilities, administrative offices, student collaboration spaces, and communal amenities into a cohesive architectural framework. The design prioritizes functionality, flexibility, and accessibility, providing students with an environment that mirrors the professional healthcare settings they will encounter throughout their careers. Inspired by the values of care, knowledge, and human connection, the architectural approach emphasizes natural daylight, comfortable learning spaces, and welcoming social environments that enhance both educational outcomes and student well-being. Sustainable design principles and efficient campus planning are incorporated to create a future-ready institution capable of adapting to evolving educational needs. As a center for nursing education and healthcare training, the proposal reflects a commitment to producing competent, compassionate, and highly skilled healthcare professionals who will contribute positively to society and the nation\'s healthcare system. Project: Murni Nursing College. Location: Cyberjaya, Selangor. Category: Institutional Building Project. Typology: Higher Education & Healthcare Training Facility. Status: Design Proposal. Tagline: "Nurturing Future Healthcare Professionals Through Innovative Learning Environments."',
+    deliverables: [
+      'Institutional Architecture & Campus Masterplan',
+      'Lecture Halls & Simulation Laboratories',
+      'Clinical Skills Training Facilities',
+      'Authority Submission & Design Review',
     ],
   },
 ];
@@ -416,7 +453,7 @@ export const DIRECTORS: DirectorProfile[] = [
     education:
       'B.Arch, University of Newcastle, Australia · B.Arch, Malaysia University of Technology (UTM)',
     experienceYears: 'Reg. No. A/R 29',
-    portrait: '/src/assets/images/director_rosyatimah_portrait_1795750150132.jpg',
+    portrait: '/src/assets/images/director_rosyatimah_portrait_new.png',
     portraitAlt:
       'Portrait of Managing Director Ar. Rosyatimah Hj. Abd Rahman in the Kuala Lumpur architecture studio',
     summary:

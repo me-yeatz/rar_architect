@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { X, ArrowRight } from 'lucide-react';
 import type { ProjectCaseStudy } from '../data/practiceData';
 import { ResilientImage } from './ResilientImage';
@@ -14,6 +14,12 @@ export function ProjectDossierModal({
   onClose,
   onDiscussSimilar,
 }: ProjectDossierModalProps) {
+  const [galleryOpen, setGalleryOpen] = useState(false);
+
+  useEffect(() => {
+    setGalleryOpen(false);
+  }, [project]);
+
   useEffect(() => {
     if (!project) return;
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -73,6 +79,35 @@ export function ProjectDossierModal({
             />
           </div>
 
+          {project.gallery && project.gallery.length > 0 && (
+            <div className="space-y-3">
+              <button
+                type="button"
+                onClick={() => setGalleryOpen((open) => !open)}
+                className="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-semibold text-[#0F0F0F] bg-[#EB8B1D] hover:bg-[#D67A12] rounded-sm transition-colors cursor-pointer"
+              >
+                {galleryOpen ? 'Hide Gallery' : 'View Gallery Project'}
+              </button>
+              {galleryOpen && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {project.gallery.map((src, index) => (
+                    <div
+                      key={src}
+                      className="aspect-[4/3] w-full overflow-hidden border border-[#E5E5E3] bg-[#F7F7F5] rounded-sm"
+                    >
+                      <ResilientImage
+                        src={src}
+                        alt={`${project.title} gallery image ${index + 1}`}
+                        fallbackTitle={project.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
           <div className="p-4 bg-[#F7F7F5] border border-[#E5E5E3] rounded-sm">
             <p className="text-xs font-semibold text-[#A65604]">Verified Project Outcome</p>
             <p className="mt-1 font-display text-lg font-bold text-[#0F0F0F]">
@@ -83,28 +118,10 @@ export function ProjectDossierModal({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <h4 className="font-display text-sm font-bold text-[#0F0F0F]">
-                Architectural Strategy
+                Project Overview
               </h4>
               <p className="text-sm leading-relaxed text-[#4A4A48]">
                 {project.architecturalApproach}
-              </p>
-            </div>
-
-            <div className="space-y-2">
-              <h4 className="font-display text-sm font-bold text-[#0F0F0F]">
-                Structural System
-              </h4>
-              <p className="text-sm leading-relaxed text-[#4A4A48]">
-                {project.structuralSystem}
-              </p>
-            </div>
-
-            <div className="space-y-2">
-              <h4 className="font-display text-sm font-bold text-[#0F0F0F]">
-                MEP &amp; Sustainability Engineering
-              </h4>
-              <p className="text-sm leading-relaxed text-[#4A4A48]">
-                {project.mepHighlight}
               </p>
             </div>
 
