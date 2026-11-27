@@ -249,23 +249,25 @@ export const PROJECTS: ProjectCaseStudy[] = [
     location: 'Teluk Gadong, Klang, Selangor',
     gfa: '62,000 m²',
     year: '2024',
-    impactHeadline: 'Religious & Civic Architecture',
+    impactHeadline:
+      'A landmark of faith, community, and architectural excellence',
     summary:
-      'Purposed mosque at Teluk Gadong, Klang, Selangor.',
+      'A landmark of faith, community, and architectural excellence, the Proposed Mosque at Teluk Gadong, Klang is envisioned as a modern Islamic institution that serves both spiritual and social needs. Designed to harmonize contemporary architecture with timeless Islamic values, the mosque provides a welcoming environment for worship, education, and community engagement.',
     image: '/src/assets/images/project_purposed_mosque_teluk_gadong.png',
     imageAlt:
       'Purposed Mosque at Teluk Gadong, Klang Selangor',
-    client: 'SimeTech Manufacturing Sdn. Bhd.',
+    client: 'Teluk Gadong Community',
     structuralSystem:
-      'Jointless steel-fiber reinforced super-flat industrial floor slab (FM2 tolerance) paired with 32m clear-span tapered portal frames.',
+      'Modern Islamic architectural framing with contemporary structural systems calibrated for community-scale worship and gathering spaces.',
     mepHighlight:
-      'Redundant 11kV substation intake, pressurized cleanroom AHU zoning, and 1.8 MWp rooftop solar PV array.',
+      'Sustainable MEP systems, natural ventilation, and energy-efficient building services tailored for tropical climate comfort.',
     architecturalApproach:
-      'Modular precast insulated concrete panels paired with an expressive 14-meter dark steel arrival canopy that shelters all-weather loading bays.',
+      'A landmark of faith, community, and architectural excellence, the Proposed Mosque at Teluk Gadong, Klang is envisioned as a modern Islamic institution that serves both spiritual and social needs. Designed to harmonize contemporary architecture with timeless Islamic values, the mosque provides a welcoming environment for worship, education, and community engagement. Strategically located within the growing Teluk Gadong precinct, the development aims to become a focal point for the surrounding community, offering prayer facilities, religious learning spaces, multipurpose halls, and public gathering areas. The design emphasizes functionality, accessibility, and sustainability while creating a serene atmosphere that inspires reflection and unity. The mosque stands as a symbol of devotion, cultural identity, and community growth, fostering meaningful connections among generations while contributing positively to the urban fabric of Klang.',
     deliverables: [
-      'Masterplan & Industrial Architecture',
-      'Super-Flat Slab & Steel Frame Design',
-      'Process Utility & Bomba Clearance',
+      'Mosque Architecture & Masterplan',
+      'Prayer Halls & Religious Learning Spaces',
+      'Multipurpose & Community Facilities',
+      'Authority Submission & CCC Supervision',
     ],
   },
   {
