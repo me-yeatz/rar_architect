@@ -1,4 +1,5 @@
 import { CheckCircle2, BookOpen, Compass } from 'lucide-react';
+import { ResilientImage } from './ResilientImage';
 
 const FIRM_INTRO =
   'Rosyatimah Abdul Rahman Architect & Engineer Sdn. Bhd. (RAR) shall be counted as a local consulting company with a difference:';
@@ -16,8 +17,8 @@ export function DisciplinesSection() {
       className="bg-[#F7F7F5] py-16 lg:py-24 border-b border-[#E5E5E3]"
     >
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-10 border-b border-[#E5E5E3]">
-          <div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 pb-10 border-b border-[#E5E5E3]">
+          <div className="lg:col-span-7 flex flex-col justify-center">
             <p className="text-sm font-semibold text-[#A65604]">01. The Firm</p>
             <h2
               className="mt-2 font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#0F0F0F]"
@@ -25,10 +26,39 @@ export function DisciplinesSection() {
             >
               A local consulting company with a difference.
             </h2>
+            <p className="mt-5 text-sm sm:text-base text-[#4A4A48] max-w-[58ch] leading-relaxed">
+              {FIRM_INTRO}
+            </p>
+            <div className="mt-7 flex flex-wrap items-center gap-3">
+              <span className="inline-flex items-center gap-2 rounded-full border border-[#E5E5E3] bg-white px-3 py-1.5 text-xs font-semibold text-[#0F0F0F]">
+                <span
+                  className="h-1.5 w-1.5 rounded-full bg-[#EB8B1D]"
+                  aria-hidden="true"
+                />
+                Integrated Architectural &amp; Engineering Consultancy
+              </span>
+              <span className="text-xs text-[#666663]">Shah Alam, Selangor</span>
+            </div>
           </div>
-          <p className="text-sm sm:text-base text-[#4A4A48] max-w-[52ch] leading-relaxed">
-            {FIRM_INTRO}
-          </p>
+
+          <div className="lg:col-span-5">
+            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm border border-[#E5E5E3] bg-[#E5E5E3] shadow-[0_18px_50px_-30px_rgba(15,15,15,0.55)]">
+              <ResilientImage
+                src="/src/assets/images/the_firm_director_portrait.png"
+                alt="RAR director in a modern lobby"
+                fallbackTitle="RAR Leadership"
+                className="h-full w-full object-cover object-top"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent px-5 pb-5 pt-16">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/75">
+                  Leadership
+                </p>
+                <p className="mt-1 font-display text-lg font-bold text-white">
+                  Professional consultancy, led by design.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">

@@ -115,7 +115,7 @@ export function ProjectDossierModal({
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
             <div className="space-y-2">
               <h4 className="font-display text-sm font-bold text-[#0F0F0F]">
                 Project Overview
@@ -125,25 +125,6 @@ export function ProjectDossierModal({
               </p>
             </div>
 
-            <div className="space-y-2">
-              <h4 className="font-display text-sm font-bold text-[#0F0F0F]">
-                RAR Scope of Services
-              </h4>
-              <ul className="space-y-1.5">
-                {project.deliverables.map((item) => (
-                  <li
-                    key={item}
-                    className="text-sm text-[#4A4A48] flex items-start gap-2.5"
-                  >
-                    <span
-                      className="mt-2 w-1.5 h-1.5 bg-[#EB8B1D] shrink-0"
-                      aria-hidden="true"
-                    />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
         </div>
 

@@ -18,13 +18,11 @@ export interface DisciplineItem {
 export type ProjectCategory =
   | 'All Works'
   | 'Commercial & Mixed-Use'
-  | 'Industrial & Logistics'
   | 'Industrial & Infrastructure'
-  | 'Civic & Institutional'
   | 'Institutional Building Project'
   | 'Religious & Civic Architecture'
   | 'Transportation / Aviation Infrastructure'
-  | 'Residential';
+  | 'Luxury Residential';
 
 export interface ProjectCaseStudy {
   id: string;
@@ -176,7 +174,7 @@ export const DISCIPLINES: DisciplineItem[] = [
     ],
     outcomeMetric: 'Up to 18% structural concrete reduction through slab optimization',
     span: 'standard',
-    typologyPreset: 'Industrial & Logistics',
+    typologyPreset: 'Industrial & Infrastructure',
   },
   {
     id: 'mep',
@@ -191,7 +189,7 @@ export const DISCIPLINES: DisciplineItem[] = [
     ],
     outcomeMetric: '28% lower annual cooling energy demand across GBI-rated portfolios',
     span: 'standard',
-    typologyPreset: 'Civic & Institutional',
+    typologyPreset: 'Institutional Building Project',
   },
   {
     id: 'delivery',
@@ -213,13 +211,11 @@ export const DISCIPLINES: DisciplineItem[] = [
 export const PROJECT_CATEGORIES: ProjectCategory[] = [
   'All Works',
   'Commercial & Mixed-Use',
-  'Industrial & Logistics',
   'Industrial & Infrastructure',
-  'Civic & Institutional',
   'Institutional Building Project',
   'Religious & Civic Architecture',
   'Transportation / Aviation Infrastructure',
-  'Residential',
+  'Luxury Residential',
 ];
 
 export const PROJECTS: ProjectCaseStudy[] = [
@@ -251,7 +247,7 @@ export const PROJECTS: ProjectCaseStudy[] = [
   },
   {
     id: 'purposed-mosque-teluk-gadong',
-    title: 'Purposed Mosque at Teluk Gadong, Klang Selangor',
+    title: 'Mosque at Teluk Gadong, Klang',
     category: 'Religious & Civic Architecture',
     location: 'Teluk Gadong, Klang, Selangor',
     gfa: '62,000 m²',
@@ -262,7 +258,7 @@ export const PROJECTS: ProjectCaseStudy[] = [
       'A landmark of faith, community, and architectural excellence, the Proposed Mosque at Teluk Gadong, Klang is envisioned as a modern Islamic institution that serves both spiritual and social needs. Designed to harmonize contemporary architecture with timeless Islamic values, the mosque provides a welcoming environment for worship, education, and community engagement.',
     image: '/src/assets/images/project_purposed_mosque_teluk_gadong.png',
     imageAlt:
-      'Purposed Mosque at Teluk Gadong, Klang Selangor',
+      'Mosque at Teluk Gadong, Klang',
     client: 'Teluk Gadong Community',
     structuralSystem:
       'Modern Islamic architectural framing with contemporary structural systems calibrated for community-scale worship and gathering spaces.',
@@ -362,6 +358,63 @@ export const PROJECTS: ProjectCaseStudy[] = [
       'Authority Submission & Design Review',
     ],
   },
+  {
+    id: 'hillside-residence',
+    title: 'Hillside Residence',
+    category: 'Luxury Residential',
+    location: '—',
+    gfa: '—',
+    year: 'Completed',
+    impactHeadline: 'Completed Project',
+    summary:
+      "The Hillside Residence is a contemporary luxury bungalow thoughtfully designed to respond to its natural topography while providing a seamless connection between architecture and landscape. Positioned within a lush green setting, the residence embraces the site's elevated terrain through a series of terraced living spaces that maximize views, natural light, and ventilation.",
+    image: '/src/assets/images/project_hillside_residence.png',
+    imageAlt: 'Hillside Residence luxury bungalow project',
+    gallery: [
+      '/src/assets/images/project_hillside_residence_02.png',
+      '/src/assets/images/project_hillside_residence_03.png',
+    ],
+    client: 'Private Client',
+    structuralSystem:
+      'Contemporary bungalow structure organized across terraced living platforms to respond to the hillside topography.',
+    mepHighlight:
+      'Efficient building systems supporting natural ventilation, daylight, and comfortable modern family living.',
+    architecturalApproach:
+      "The Hillside Residence is a contemporary luxury bungalow thoughtfully designed to respond to its natural topography while providing a seamless connection between architecture and landscape. Positioned within a lush green setting, the residence embraces the site's elevated terrain through a series of terraced living spaces that maximize views, natural light, and ventilation. Characterized by clean architectural lines, expansive glass façades, and carefully selected material finishes, the design creates a sophisticated balance between transparency, privacy, and comfort. The open-plan arrangement encourages fluid movement throughout the home, while generous outdoor terraces and landscaped gardens extend the living experience beyond the built form. The architectural composition emphasizes harmony with nature, integrating contemporary design principles with the surrounding environment to create a tranquil retreat for modern family living. Through its careful attention to proportion, materiality, and spatial experience, the residence reflects a refined approach to luxury residential architecture. Project: Hillside Residence. Category: Luxury Residential. Typology: Private Bungalow Residence. Status: Completed Project. Tagline: \"Modern Living Elevated by Nature.\"",
+    deliverables: [
+      'Luxury Residential Architecture',
+      'Terraced Living & Landscape Integration',
+      'Interior Design Coordination',
+      'Authority Submission & Completion',
+    ],
+  },
+  {
+    id: 'tropical-villa',
+    title: 'Tropical Villa',
+    category: 'Luxury Residential',
+    location: '—',
+    gfa: '—',
+    year: 'Design Proposal',
+    impactHeadline: 'Design Proposal',
+    summary:
+      'Tropical Villa is a luxury residential design proposal shaped around contemporary tropical living, shaded outdoor spaces, and a close connection between the home and its landscape.',
+    image: '/src/assets/images/project_tropical_villa.png',
+    imageAlt: 'Tropical Villa luxury residential design proposal',
+    gallery: ['/src/assets/images/project_tropical_villa_01.png'],
+    client: 'Private Client',
+    structuralSystem:
+      'Contemporary villa structure planned around open living spaces and sheltered outdoor terraces.',
+    mepHighlight:
+      'Passive-first environmental strategy emphasizing natural ventilation, daylight, and shaded tropical comfort.',
+    architecturalApproach:
+      'The proposed villa explores a refined tropical residential language, combining clean contemporary forms with deep overhangs, cross ventilation, and sheltered terraces. The design prioritizes privacy, comfort, and a seamless relationship between interior spaces and the surrounding landscape, offering a calm and contemporary retreat for modern living. Project: Tropical Villa. Category: Luxury Residential. Status: Design Proposal.',
+    deliverables: [
+      'Luxury Residential Architecture',
+      'Tropical Design Strategy',
+      'Concept Design Proposal',
+      'Authority Submission Coordination',
+    ],
+  },
 ];
 
 export const PROCESS_STAGES: ProcessStage[] = [
@@ -432,7 +485,7 @@ export interface DirectorProfile {
   registrations: string;
   education: string;
   experienceYears: string;
-  portrait: string;
+  portrait?: string;
   portraitAlt: string;
   summary: string;
   biography: string;
@@ -514,7 +567,6 @@ export const DIRECTORS: DirectorProfile[] = [
     education:
       'Advance Diploma Civil Engineering & Diploma in Civil Engineering, MARA Institute of Technology, Malaysia',
     experienceYears: 'Reg. No. C1976',
-    portrait: '/src/assets/images/director_soezyana_portrait_1795750149359.jpg',
     portraitAlt:
       'Portrait of Director Ir. Soezyana Kristyawati Soegiarto in the engineering studio',
     summary:
@@ -572,8 +624,6 @@ export type TeamDivision =
   | 'All Divisions'
   | 'Architecture Studio'
   | 'Civil & Structural'
-  | 'MEP & Sustainability'
-  | 'BIM & Contract'
   | 'Administration';
 
 export interface TeamMemberProfile {
@@ -592,8 +642,6 @@ export const TEAM_DIVISIONS: TeamDivision[] = [
   'All Divisions',
   'Architecture Studio',
   'Civil & Structural',
-  'MEP & Sustainability',
-  'BIM & Contract',
   'Administration',
 ];
 
@@ -614,8 +662,8 @@ export const INITIAL_TEAM_PROFILES: TeamMemberProfile[] = [
     code: 'BM-07',
     name: 'M. Nor Hidayat Bin Samsudin',
     role: 'Project Coordinator',
-    division: 'BIM & Contract',
-    portrait: '/src/assets/images/team_hidayat_portrait.jpg',
+    division: 'Administration',
+    portrait: '/src/assets/images/team_hidayat_portrait.png',
     credentials:
       'BSc. (Hons) Construction Management (UiTM); Dip. in Architecture (UTM); Cert. of Architectural Draughtsman (City Uni. Collage & Technology Malaysia)',
     experience: '—',

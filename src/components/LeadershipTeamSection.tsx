@@ -17,8 +17,6 @@ interface LeadershipTeamSectionProps {
 const DIVISION_CODES: Record<Exclude<TeamDivision, 'All Divisions'>, string> = {
   'Architecture Studio': 'AR',
   'Civil & Structural': 'CS',
-  'MEP & Sustainability': 'ME',
-  'BIM & Contract': 'BM',
   'Administration': 'AD',
 };
 
@@ -89,12 +87,23 @@ export function LeadershipTeamSection({
                       : 'lg:order-1 lg:border-r'
                   }`}
                 >
+                  {director.portrait ? (
                   <ResilientImage
                     src={director.portrait}
                     alt={director.portraitAlt}
                     fallbackTitle={director.name}
                     className="w-full h-full object-cover object-top"
                   />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-[#0F0F0F] text-white font-display text-3xl font-bold">
+                    {director.name
+                      .split(' ')
+                      .map((part) => part[0])
+                      .join('')
+                      .slice(0, 2)
+                      .toUpperCase()}
+                  </div>
+                )}
                 </div>
 
                 {/* Vitae Content Column (8 cols) */}
@@ -217,7 +226,7 @@ export function LeadershipTeamSection({
                 Multidisciplinary Team Directory
               </h3>
               <p className="mt-1.5 text-sm text-[#4A4A48]">
-                Multidisciplinary studio roster - filter by division.
+                Browse the studio roster by division — portraits, roles, and expertise at a glance.
               </p>
             </div>
 
@@ -252,58 +261,61 @@ export function LeadershipTeamSection({
             </div>
           </div>
 
-          {/* 2-Column Architectural Roster */}
-          <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 border border-[#E5E5E3] bg-white rounded-sm overflow-hidden">
-            {filteredMembers.map((member, index) => {
+          {/* Team Member Cards */}
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-5">
+            {filteredMembers.map((member) => {
               return (
                 <article
                   key={member.id}
-                  className={`p-6 flex flex-col sm:flex-row sm:items-start gap-4 border-b border-[#E5E5E3] ${
-                    index % 2 === 0 ? 'lg:border-r' : ''
-                  }`}
+                  className="group flex flex-col overflow-hidden rounded-sm border border-[#E5E5E3] bg-white transition-colors hover:border-[#0F0F0F]"
                 >
-                  {member.portrait ? (
-                    <div className="w-12 h-12 rounded-sm overflow-hidden border border-[#E5E5E3] shrink-0 bg-[#F7F7F5]">
+                  <div className="relative aspect-[4/3] shrink-0 overflow-hidden border-b border-[#E5E5E3] bg-[#F7F7F5]">
+                    {member.portrait ? (
                       <ResilientImage
                         src={member.portrait}
                         alt={member.name}
                         fallbackTitle={getInitials(member.name)}
-                        className="w-full h-full object-cover"
+                        className="h-full w-full object-cover object-top"
                       />
-                    </div>
-                  ) : (
-                    <div className="w-12 h-12 rounded-sm bg-[#0F0F0F] text-white flex items-center justify-center font-display text-sm font-bold tracking-wide shrink-0">
-                      {getInitials(member.name)}
-                    </div>
-                  )}
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center bg-[#0F0F0F] font-display text-4xl font-bold tracking-wide text-white">
+                        {getInitials(member.name)}
+                      </div>
+                    )}
+                    <span className="absolute left-3 top-3 rounded-sm bg-white/90 px-2 py-1 font-mono text-[11px] font-semibold text-[#A65604] backdrop-blur-sm">
+                      {member.code}
+                    </span>
+                  </div>
 
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-start justify-between gap-3">
-                      <div className="min-w-0">
-                        <div className="flex flex-wrap items-center gap-2 text-xs text-[#666663] tabular-nums">
-                          <span className="font-mono font-semibold text-[#A65604]">
-                            {member.code}
-                          </span>
-                          <span aria-hidden="true">·</span>
-                          <span className="font-medium text-[#0F0F0F]">
-                            {member.division}
-                          </span>
-                          <span aria-hidden="true">·</span>
-                          <span>{member.experience}</span>
-                        </div>
-                        <h4 className="mt-1 font-display text-lg font-bold text-[#0F0F0F]">
-                          {member.name}
-                        </h4>
-                        <p className="text-xs font-medium text-[#4A4A48]">
-                          {member.role} · {member.credentials}
+                  <div className="flex flex-1 flex-col p-5 sm:p-6">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="rounded-full bg-[#F7F7F5] px-2.5 py-1 text-[11px] font-semibold text-[#0F0F0F]">
+                        {member.division}
+                      </span>
+                      {member.experience !== '—' && (
+                        <span className="text-[11px] text-[#666663]">
+                          {member.experience}
+                        </span>
+                      )}
+                    </div>
+
+                    <h4 className="mt-3 font-display text-xl font-bold tracking-tight text-[#0F0F0F]">
+                      {member.name}
+                    </h4>
+                    <p className="mt-1 text-sm font-semibold text-[#A65604]">
+                      {member.role}
+                    </p>
+                    <p className="mt-2 text-xs leading-relaxed text-[#666663]">
+                      {member.credentials}
+                    </p>
+
+                    <div className="mt-auto pt-4">
+                      <div className="border-t border-[#E5E5E3] pt-4">
+                        <p className="text-sm leading-relaxed text-[#4A4A48]">
+                          {member.specialization}
                         </p>
                       </div>
-
                     </div>
-
-                    <p className="mt-2.5 text-sm leading-relaxed text-[#4A4A48]">
-                      {member.specialization}
-                    </p>
                   </div>
                 </article>
               );
@@ -350,12 +362,23 @@ export function LeadershipTeamSection({
             <div className="overflow-y-auto p-6 space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 items-start">
                 <div className="sm:col-span-5 aspect-[3/4] border border-[#E5E5E3] bg-[#F7F7F5] rounded-sm overflow-hidden">
-                  <ResilientImage
-                    src={selectedDirector.portrait}
-                    alt={selectedDirector.portraitAlt}
-                    fallbackTitle={selectedDirector.name}
-                    className="w-full h-full object-cover object-top"
-                  />
+                  {selectedDirector.portrait ? (
+                    <ResilientImage
+                      src={selectedDirector.portrait}
+                      alt={selectedDirector.portraitAlt}
+                      fallbackTitle={selectedDirector.name}
+                      className="w-full h-full object-cover object-top"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-[#0F0F0F] text-white font-display text-4xl font-bold">
+                      {selectedDirector.name
+                        .split(' ')
+                        .map((part) => part[0])
+                        .join('')
+                        .slice(0, 2)
+                        .toUpperCase()}
+                    </div>
+                  )}
                 </div>
                 <div className="sm:col-span-7 space-y-4">
                   <div>
@@ -480,7 +503,7 @@ export function LeadershipTeamSection({
                   const preset =
                     selectedDirector.id === 'rosyatimah-abd-rahman'
                       ? 'Commercial & Mixed-Use'
-                      : 'Industrial & Logistics';
+                      : 'Industrial & Infrastructure';
                   setSelectedDirector(null);
                   onConsultDirector(preset);
                 }}

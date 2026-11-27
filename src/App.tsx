@@ -29,9 +29,7 @@ export default function App() {
   };
 
   const handleSelectTypologyAndConsult = (typology: string) => {
-    const mappedTypology =
-      typology === 'Residential' ? 'Residential High-Rise' : typology;
-    setSelectedTypology(mappedTypology);
+    setSelectedTypology(typology);
     setActiveProject(null);
     scrollToSection('consultation');
   };
