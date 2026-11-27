@@ -71,7 +71,7 @@ export function Hero({ onConsultClick, onProjectsClick }: HeroProps) {
                   Integrated Principal Submitting Person (PSP) &amp; PE Practice
                 </p>
                 <p className="font-display text-base sm:text-lg font-semibold mt-0.5">
-                  Commercial, Industrial, Civic &amp; High-Rise Developments
+                  High Rise Proposal Project STIDGARD UNIVERSITY
                 </p>
               </div>
               <span className="font-mono text-xs text-[#F5A33E] tabular-nums">

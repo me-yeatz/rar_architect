@@ -60,7 +60,7 @@ export const LOGO_ASSET_PATH =
   '/assets/aistudio/Gemini_Generated_Image_c9b8aec9b8aec9b8_988c9db8.jpg';
 
 export const HERO_IMAGE_PATH =
-  '/src/assets/images/hero_rar_architecture_1795749719518.jpg';
+  '/src/assets/images/hero_stidgard_university.png';
 
 export interface CompanyCertification {
   id: string;
