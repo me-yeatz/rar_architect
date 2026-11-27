@@ -1,5 +1,5 @@
-import { useEffect, useState, type FormEvent } from 'react';
-import { ArrowUpRight, Plus, Trash2, UserPlus, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { ArrowUpRight, X } from 'lucide-react';
 import {
   DIRECTORS,
   INITIAL_TEAM_PROFILES,
@@ -32,72 +32,6 @@ export function LeadershipTeamSection({
     useState<TeamDivision>('All Divisions');
   const [teamMembers, setTeamMembers] =
     useState<TeamMemberProfile[]>(INITIAL_TEAM_PROFILES);
-  const [isTemplateFormOpen, setIsTemplateFormOpen] = useState(false);
-
-  const [newMember, setNewMember] = useState({
-    name: '',
-    role: '',
-    division: 'Architecture Studio' as Exclude<TeamDivision, 'All Divisions'>,
-    credentials: '',
-    experience: '',
-    specialization: '',
-  });
-  const [formError, setFormError] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (!selectedDirector) return;
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setSelectedDirector(null);
-    };
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [selectedDirector]);
-
-  const filteredMembers =
-    activeDivision === 'All Divisions'
-      ? teamMembers
-      : teamMembers.filter((member) => member.division === activeDivision);
-
-  const handleAddMember = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (!newMember.name.trim() || !newMember.role.trim()) {
-      setFormError('Please enter both a full name and a role title.');
-      return;
-    }
-
-    const nextIndex = String(teamMembers.length + 1).padStart(2, '0');
-    const prefix = DIVISION_CODES[newMember.division];
-    const created: TeamMemberProfile = {
-      id: `team-custom-${Date.now()}`,
-      code: `${prefix}-${nextIndex}`,
-      name: newMember.name.trim(),
-      role: newMember.role.trim(),
-      division: newMember.division,
-      credentials: newMember.credentials.trim() || 'Registered Technical Staff',
-      experience: newMember.experience.trim() || '5+ Years',
-      specialization:
-        newMember.specialization.trim() ||
-        'Integrated architectural and engineering project delivery.',
-    };
-
-    setTeamMembers((prev) => [...prev, created]);
-    setActiveDivision('All Divisions');
-    setNewMember({
-      name: '',
-      role: '',
-      division: 'Architecture Studio',
-      credentials: '',
-      experience: '',
-      specialization: '',
-    });
-    setFormError(null);
-    setIsTemplateFormOpen(false);
-  };
-
-  const handleRemoveCustomMember = (id: string) => {
-    setTeamMembers((prev) => prev.filter((m) => m.id !== id));
-  };
-
   const getInitials = (fullName: string) => {
     const cleaned = fullName
       .replace(/^(Ar\.|Ir\.|Ts\.|Engr\.|Hfz\.|Dr\.)\s*/i, '')
@@ -277,8 +211,7 @@ export function LeadershipTeamSection({
                 Multidisciplinary Team Directory
               </h3>
               <p className="mt-1.5 text-sm text-[#4A4A48]">
-                Standardized studio profile template — filter by discipline or add a
-                team member profile.
+                Multidisciplinary studio roster - filter by division.
               </p>
             </div>
 
@@ -309,200 +242,13 @@ export function LeadershipTeamSection({
                 })}
               </div>
 
-              <button
-                type="button"
-                onClick={() => setIsTemplateFormOpen((prev) => !prev)}
-                className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-[#0F0F0F] bg-[#EB8B1D] hover:bg-[#D67A12] rounded-sm transition-colors whitespace-nowrap shrink-0 cursor-pointer"
-              >
-                <UserPlus className="w-3.5 h-3.5" aria-hidden="true" />
-                {isTemplateFormOpen ? 'Close Profile Form' : 'Add Team Profile'}
-              </button>
+
             </div>
           </div>
-
-          {/* Interactive Team Profile Template Creator */}
-          {isTemplateFormOpen && (
-            <form
-              onSubmit={handleAddMember}
-              className="mt-6 bg-white border border-[#0F0F0F]/25 rounded-sm p-6 space-y-5"
-            >
-              <div className="flex items-center justify-between gap-4 pb-4 border-b border-[#E5E5E3]">
-                <div>
-                  <h4 className="font-display text-base font-bold text-[#0F0F0F]">
-                    New Team Member Profile Template
-                  </h4>
-                  <p className="text-xs text-[#666663] mt-0.5">
-                    Populate the fields below to preview a standardized profile row in
-                    the directory.
-                  </p>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => setIsTemplateFormOpen(false)}
-                  aria-label="Close team profile template form"
-                  className="w-9 h-9 inline-flex items-center justify-center border border-[#E5E5E3] hover:bg-[#F7F7F5] rounded-sm text-[#0F0F0F] cursor-pointer"
-                >
-                  <X className="w-4 h-4" />
-                </button>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div>
-                  <label
-                    htmlFor="team-name"
-                    className="block text-xs font-semibold text-[#0F0F0F] mb-1.5"
-                  >
-                    Full Name &amp; Title *
-                  </label>
-                  <input
-                    id="team-name"
-                    type="text"
-                    value={newMember.name}
-                    onChange={(e) =>
-                      setNewMember((p) => ({ ...p, name: e.target.value }))
-                    }
-                    placeholder="e.g. Ar. Hafizuddin Salleh"
-                    className="w-full px-3 py-2 text-sm border border-[#E5E5E3] rounded-sm focus:outline-none focus:border-[#0F0F0F]"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="team-role"
-                    className="block text-xs font-semibold text-[#0F0F0F] mb-1.5"
-                  >
-                    Studio Role *
-                  </label>
-                  <input
-                    id="team-role"
-                    type="text"
-                    value={newMember.role}
-                    onChange={(e) =>
-                      setNewMember((p) => ({ ...p, role: e.target.value }))
-                    }
-                    placeholder="e.g. Senior Resident Engineer"
-                    className="w-full px-3 py-2 text-sm border border-[#E5E5E3] rounded-sm focus:outline-none focus:border-[#0F0F0F]"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="team-division"
-                    className="block text-xs font-semibold text-[#0F0F0F] mb-1.5"
-                  >
-                    Division
-                  </label>
-                  <select
-                    id="team-division"
-                    value={newMember.division}
-                    onChange={(e) =>
-                      setNewMember((p) => ({
-                        ...p,
-                        division: e.target.value as Exclude<
-                          TeamDivision,
-                          'All Divisions'
-                        >,
-                      }))
-                    }
-                    className="w-full px-3 py-2 text-sm border border-[#E5E5E3] rounded-sm bg-white focus:outline-none focus:border-[#0F0F0F]"
-                  >
-                    <option value="Architecture Studio">Architecture Studio</option>
-                    <option value="Civil & Structural">Civil &amp; Structural</option>
-                    <option value="MEP & Sustainability">
-                      MEP &amp; Sustainability
-                    </option>
-                    <option value="BIM & Contract">BIM &amp; Contract</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="team-credentials"
-                    className="block text-xs font-semibold text-[#0F0F0F] mb-1.5"
-                  >
-                    Registrations &amp; Degree
-                  </label>
-                  <input
-                    id="team-credentials"
-                    type="text"
-                    value={newMember.credentials}
-                    onChange={(e) =>
-                      setNewMember((p) => ({ ...p, credentials: e.target.value }))
-                    }
-                    placeholder="e.g. BEM PE · B.Eng (Hons)"
-                    className="w-full px-3 py-2 text-sm border border-[#E5E5E3] rounded-sm focus:outline-none focus:border-[#0F0F0F]"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="team-experience"
-                    className="block text-xs font-semibold text-[#0F0F0F] mb-1.5"
-                  >
-                    Years of Experience
-                  </label>
-                  <input
-                    id="team-experience"
-                    type="text"
-                    value={newMember.experience}
-                    onChange={(e) =>
-                      setNewMember((p) => ({ ...p, experience: e.target.value }))
-                    }
-                    placeholder="e.g. 9 Years"
-                    className="w-full px-3 py-2 text-sm border border-[#E5E5E3] rounded-sm focus:outline-none focus:border-[#0F0F0F]"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="team-spec"
-                    className="block text-xs font-semibold text-[#0F0F0F] mb-1.5"
-                  >
-                    Key Practice Focus
-                  </label>
-                  <input
-                    id="team-spec"
-                    type="text"
-                    value={newMember.specialization}
-                    onChange={(e) =>
-                      setNewMember((p) => ({
-                        ...p,
-                        specialization: e.target.value,
-                      }))
-                    }
-                    placeholder="e.g. High-rise structural detailing & site QA"
-                    className="w-full px-3 py-2 text-sm border border-[#E5E5E3] rounded-sm focus:outline-none focus:border-[#0F0F0F]"
-                  />
-                </div>
-              </div>
-
-              {formError && (
-                <p className="text-xs font-medium text-red-700">{formError}</p>
-              )}
-
-              <div className="flex items-center justify-end gap-3 pt-2">
-                <button
-                  type="button"
-                  onClick={() => setIsTemplateFormOpen(false)}
-                  className="px-4 py-2 text-xs font-semibold text-[#4A4A48] hover:text-[#0F0F0F] border border-[#E5E5E3] rounded-sm cursor-pointer"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  className="inline-flex items-center gap-1.5 px-5 py-2 text-xs font-semibold text-[#0F0F0F] bg-[#EB8B1D] hover:bg-[#D67A12] rounded-sm cursor-pointer"
-                >
-                  <Plus className="w-3.5 h-3.5" aria-hidden="true" />
-                  Add to Directory
-                </button>
-              </div>
-            </form>
-          )}
 
           {/* 2-Column Architectural Roster */}
           <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 border border-[#E5E5E3] bg-white rounded-sm overflow-hidden">
             {filteredMembers.map((member, index) => {
-              const isCustom = member.id.startsWith('team-custom-');
               return (
                 <article
                   key={member.id}
@@ -547,16 +293,6 @@ export function LeadershipTeamSection({
                         </p>
                       </div>
 
-                      {isCustom && (
-                        <button
-                          type="button"
-                          onClick={() => handleRemoveCustomMember(member.id)}
-                          aria-label={`Remove ${member.name}`}
-                          className="p-1.5 text-[#666663] hover:text-red-700 rounded-sm cursor-pointer shrink-0"
-                        >
-                          <Trash2 className="w-4 h-4" />
-                        </button>
-                      )}
                     </div>
 
                     <p className="mt-2.5 text-sm leading-relaxed text-[#4A4A48]">
