@@ -493,7 +493,8 @@ export type TeamDivision =
   | 'Architecture Studio'
   | 'Civil & Structural'
   | 'MEP & Sustainability'
-  | 'BIM & Contract';
+  | 'BIM & Contract'
+  | 'Administration';
 
 export interface TeamMemberProfile {
   id: string;
@@ -513,6 +514,7 @@ export const TEAM_DIVISIONS: TeamDivision[] = [
   'Civil & Structural',
   'MEP & Sustainability',
   'BIM & Contract',
+  'Administration',
 ];
 
 export const INITIAL_TEAM_PROFILES: TeamMemberProfile[] = [
@@ -575,6 +577,27 @@ export const INITIAL_TEAM_PROFILES: TeamMemberProfile[] = [
     credentials: 'BEM Graduate Engineer · IWK & JPS',
     experience: '7 Years',
     specialization: 'Earthworks grading, stormwater OSD detention basins, and roadworks submission.',
+  },
+  {
+    id: 'team-07',
+    code: 'AD-07',
+    name: 'Pn. Hasnah Bt. Mohd Ali',
+    role: 'Administration Executive',
+    division: 'Administration',
+    credentials: 'Master in Human Resource Development (UPM); B.In Social Science (UKM)',
+    experience: '—',
+    specialization: 'Human resource development, administration, and corporate support.',
+  },
+  {
+    id: 'team-08',
+    code: 'BM-07',
+    name: 'M. Nor Hidayat Bin Samsudin',
+    role: 'Project Coordinator',
+    division: 'BIM & Contract',
+    credentials:
+      'BSc. (Hons) Construction Management (UiTM); Dip. in Architecture (UTM); Cert. of Architectural Draughtsman (City Uni. Collage & Technology Malaysia)',
+    experience: '—',
+    specialization: 'Project coordination, construction management, and architectural documentation.',
   },
 ];
 

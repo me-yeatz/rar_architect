@@ -19,6 +19,7 @@ const DIVISION_CODES: Record<Exclude<TeamDivision, 'All Divisions'>, string> = {
   'Civil & Structural': 'CS',
   'MEP & Sustainability': 'ME',
   'BIM & Contract': 'BM',
+  'Administration': 'AD',
 };
 
 export function LeadershipTeamSection({
