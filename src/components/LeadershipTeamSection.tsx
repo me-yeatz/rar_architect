@@ -510,9 +510,20 @@ export function LeadershipTeamSection({
                     index % 2 === 0 ? 'lg:border-r' : ''
                   }`}
                 >
-                  <div className="w-12 h-12 rounded-sm bg-[#0F0F0F] text-white flex items-center justify-center font-display text-sm font-bold tracking-wide shrink-0">
-                    {getInitials(member.name)}
-                  </div>
+                  {member.portrait ? (
+                    <div className="w-12 h-12 rounded-sm overflow-hidden border border-[#E5E5E3] shrink-0 bg-[#F7F7F5]">
+                      <ResilientImage
+                        src={member.portrait}
+                        alt={member.name}
+                        fallbackTitle={getInitials(member.name)}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-12 h-12 rounded-sm bg-[#0F0F0F] text-white flex items-center justify-center font-display text-sm font-bold tracking-wide shrink-0">
+                      {getInitials(member.name)}
+                    </div>
+                  )}
 
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between gap-3">
