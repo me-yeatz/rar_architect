@@ -283,10 +283,16 @@ export const PROJECTS: ProjectCaseStudy[] = [
     impactHeadline: 'Religious Education & Orphan Care Complex',
     summary:
       'A religious education complex dedicated to tahfiz learning and the care of orphaned children, delivered in 2019. The project provides a purpose-built environment for worship, religious instruction, and communal living within a single integrated campus.',
-    image:
-      '/src/assets/images/project_kompleks_sekolah_tahfiz_anak_yatim_alkitab.png',
+    image: '/src/assets/images/TRZ1-_100_TK_3D_01.png',
     imageAlt:
-      'KOMPLEKS SEKOLAH TAHFIZ ANAK YATIM ALKITAB religious education complex',
+      'KOMPLEKS SEKOLAH TAHFIZ ANAK YATIM ALKITAB 3D architectural render',
+    gallery: [
+      '/src/assets/images/TRZ1-_100_TK_3D_02.png',
+      '/src/assets/images/TRZ1-_100_TK_3D_03.png',
+      '/src/assets/images/TRZ1-_100_TK_3D_04.png',
+      '/src/assets/images/TRZ1-_100_TK_3D_05.png',
+      '/src/assets/images/TRZ1-_100_TK_3D_06.png',
+    ],
     client: '—',
     structuralSystem:
       'Purpose-built religious education campus with learning, residential, and community facilities planned as an integrated whole.',
