@@ -274,6 +274,34 @@ export const PROJECTS: ProjectCaseStudy[] = [
     ],
   },
   {
+    id: 'kompleks-sekolah-tahfiz-anak-yatim-alkitab',
+    title: 'KOMPLEKS SEKOLAH TAHFIZ ANAK YATIM ALKITAB',
+    category: 'Religious & Civic Architecture',
+    location: '—',
+    gfa: '—',
+    year: '2019',
+    impactHeadline: 'Religious Education & Orphan Care Complex',
+    summary:
+      'A religious education complex dedicated to tahfiz learning and the care of orphaned children, delivered in 2019. The project provides a purpose-built environment for worship, religious instruction, and communal living within a single integrated campus.',
+    image:
+      '/src/assets/images/project_kompleks_sekolah_tahfiz_anak_yatim_alkitab.png',
+    imageAlt:
+      'KOMPLEKS SEKOLAH TAHFIZ ANAK YATIM ALKITAB religious education complex',
+    client: '—',
+    structuralSystem:
+      'Purpose-built religious education campus with learning, residential, and community facilities planned as an integrated whole.',
+    mepHighlight:
+      'Practical building services supporting classroom, residential, and communal use within a tropical Malaysian setting.',
+    architecturalApproach:
+      'Kompleks Sekolah Tahfiz Anak Yatim Alkitab is a religious education complex delivered in 2019 to support tahfiz schooling and care for orphaned children. The architecture organizes learning spaces, student accommodation, and communal facilities around a calm and disciplined campus setting, balancing daily worship and religious instruction with the practical needs of a residential school. Flexible classrooms and shared gathering areas encourage both focused study and a strong sense of community, while simple, durable materials and passive comfort strategies keep the complex practical to operate over the long term. The result is a purpose-built environment that serves education, care, and faith under one roof.',
+    deliverables: [
+      'Religious Education Campus Architecture',
+      'Tahfiz School & Student Accommodation Planning',
+      'Communal & Worship Facilities',
+      'Authority Submission & Completion Coordination',
+    ],
+  },
+  {
     id: 'mumbai-international-airport',
     title: 'MUMBAI International Airport',
     category: 'Transportation / Aviation Infrastructure',
